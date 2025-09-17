@@ -1,0 +1,138 @@
+body {
+    background-color: lightgray;
+    /*text-transform: uppercase;*/
+}
+
+section.container {
+    border: 10px solid black;
+    padding: 10px;
+    font-size: 40px;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        > * {
+            border: 1px dotted black;
+        }
+
+        .logo {
+            background-color: darkgray;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+
+            a {
+                background-color: gray;
+                color: white;
+                border-radius: 5px;
+                padding: 10px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    section.hero {
+        img {
+            width: 100%;
+        }
+
+        /* section & bg-image*/
+
+        &.bg-image {
+            height: 250px;
+            background-image: url('/panda.JPG');
+            border: 5px solid orange;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            div.content {
+                font-size: 50px;
+                color: white;
+            }
+        }
+    }
+
+    section.products {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 2px solid green;
+
+
+
+        div.product {
+            padding: 10px;
+            border: 1px dashed blue;
+
+            &.highlighted {
+                border-width: 3px;
+                border-style: solid;
+            }
+
+            /* a custom class that, which applied to an element
+            that has the class of "product", will work*/
+            &:nth-of-type(2) {
+                
+            }
+
+            .top-line {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+
+                h4, p {
+                    margin: 0;
+                }
+
+                p {
+                    text-transform: uppercase;
+                    font-size: 10px;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* group all media queries in one spot*/
+
+
+/* tablet and up*/
+@media screen and (min-width: 580px) {
+    section.container {
+        section.products {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .product {
+                width: 45%;
+            }
+        }
+    }
+}
+
+/* desktop and up*/
+@media screen and (min-width: 1200px) {
+    section.container {
+        section.products {
+            .product {
+                width: 30%;
+            }
+        }
+    }
+}
